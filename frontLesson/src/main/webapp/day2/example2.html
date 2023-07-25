@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 기본 프로퍼티 정리</title>
+<style type = "text/css">
+	th,td{
+		border: 1px solid gray;
+		padding: 20px 10px;
+		text-align: center;
+	}
+	
+	th{
+		background-color: lightblue;
+		color: black;	
+		width: 200px;
+	}
+	td{
+		width: 400px;
+	}
+		
+	td:nth-child(2) {
+		text-align: left;
+	}	
+	
+	table {
+		border: 2px solid gray;
+		border-collapse: collapse;
+		margin: auto;
+		margin-top: 60px;
+	}
+	
+</style>
+</head>
+<body>
+<h1 style = "color: darkblue">CSS 기본 프로퍼티</h1>
+<br>
+<h2>Background</h2>
+<table>	
+	<tr>		
+		<th>Color</th>
+		<td>background-color:DodgerBlue;</td>
+	</tr>
+	<tr>		
+		<th>Image</th>
+		<td>background-image: url("paper.gif");</td>
+	</tr>
+</table>
+<br>
+
+<h2>Border</h2>
+<table>
+	<tr>		
+		<th>Border Style</th>
+		<td>border-style: dotted;<br>
+			dashed;<br> solid;<br> double;<br>
+			groove;<br> ridge;
+		</td>
+	</tr>
+	<tr>		
+		<th>Border Width</th>
+		<td>border-width: 5px;<br>
+			medium; <br>2px; <br>thick;	<br>			
+			5px 20px; (top,bottom / right,left) <br>
+			25px 10px 4px 35px; (top/right/bottom/left)		
+		</td>
+	</tr>
+</table>	
+<br>
+
+<h2>Margin/Padding</h2>
+<table>	
+	<tr>		
+		<th>Margin</th>
+		<td>margin: 25px 50px 75px 100px; (top/right/bottom/left)</td>
+	</tr>
+	<tr>		
+		<th>Padding</th>
+		<td>padding: 25px 50px 75px 100px; (top/right/bottom/left)<br>
+			40px 20px;	(top,bottom / right,left)	
+		</td>
+	</tr>
+</table>
+<br>
+
+<h2>Height/Width</h2>
+<table>
+	<tr>		
+		<th>Height/Width</th>
+		<td>height: 200px; <br>
+  			width: 50%;
+		</td>
+	</tr>
+	
+</table>	
+<br>
+
+<h2>Text</h2>
+<table>
+	<tr>		
+		<th>Text color</th>
+		<td>background-color: lightgrey;
+		</td>
+	</tr>
+	<tr>		
+		<th>Text Alignment</th>
+		<td>text-align: center; <br>
+			left;<br> right;
+		</td>
+	</tr>
+	
+</table>	
+<br>
+
+<h2>Font</h2>
+<table>
+	<tr>		
+		<th>Fonts</th>
+		<td>font-family: "Times New Roman", Times, serif;<br>
+			font-family: Arial, Helvetica, sans-serif;
+		</td>
+	</tr>
+	<tr>		
+		<th>Font Size</th>
+		<td>font-size: 40px;
+		</td>
+	</tr>
+	<tr>		
+		<th>Font Style</th>
+		<td>font-style: normal; <br>italic; <br>oblique;
+		</td>
+	</tr>
+	<tr>		
+		<th>Font Weight</th>
+		<td>font-weight: normal;<br> bold;
+		</td>
+	</tr>
+</table>	
+<br>
+
+
+</body>
+</html>
