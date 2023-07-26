@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* 블록요소의 width 는 기본이 화면의 100% , height는 컨텐츠 크기만큼. 높이는 padding으로 정하기 */
+html, body {
+	height: 100vh;
+	margin: 0;
+}
+
+/* header, nav, section, footer 를 전체 화면 기준으로 높이를 부모 태그 기준 비율로 정합니다.
+이 때 padding 과 border 를 포함하여 계산하기 위해 box-sizing : border-box; 로 합니다.
+예시 :
+header - 20%(vh)
+nav - 7%(vh)
+section - 66%(vh)
+footer - 7%(vh)
+nav ul - 100%(vh)
+높이 속성을 height, min-height 각각 사용해 보고 테스트는 브라우저 크기를 다르게 하면서
+실행해보세요.  */
+header {
+	box-sizing: border-box;
+	padding: 40px 20px;
+	background-color: blue;
+	color: white;
+	height: 20vh;
+	/* flexbox 레이아웃으로 자식 요소를 정렬하기 */
+	display: flex;
+	/* 수직 정렬 */
+	align-items: center;
+	/* 수평 정렬 */
+	justify-content: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+nav {
+	height: 7vh;
+	box-sizing: border-box;
+}
+
+ul {
+	height: 100vh;
+	list-style: none;
+	background-color: lightblue;
+	margin: 0px;
+	/* 자식 li 에 float 속성을 지정했을 때 필요합니다. */
+	overflow: hidden;
+}
+/* ul 태그의 자손 */
+nav a {
+	text-decoration: none; /* 밑줄 없애기 */
+	padding: 20px;
+	display: inline-block;
+	color: white;
+}
+
+nav li {
+	float: left;
+	/* float 을 지정하면 부모 태그 ul의 높이가 0이 됩니다.
+		ul 태그 overflow 를 설정해야 합니다.
+	 */
+}
+
+section {
+	padding: 20px;
+	background-color: azure;
+	/* 컨텐츠 내용만큼 높이만 지정되는 것을 최소 높이 지정하여 바꾸기 */
+	height: 66vh;
+	box-sizing: border-box;
+	background-color: lightgray;
+}
+
+footer {
+	padding: 10px;
+	background-color: cornflowerblue;
+	color: white;
+	font-size: 80%;
+	text-align: center;
+	height: 7vh;
+	box-sizing: border-box;
+}
+
+th, td {
+	border: 1px solid gray;
+	padding: 20px 10px;
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 60px;
+}
