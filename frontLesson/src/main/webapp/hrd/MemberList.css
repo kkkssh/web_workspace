@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* 회원목록조회 테이블 */
+table {
+	width: 1000px;
+	border-collapse: collapse; 
+	margin: auto;
+	margin-top: 50px;
+}
+
+th, td {
+	border: 1px solid gray;
+	padding: 20px 10px;
+	text-align: center;
+}
