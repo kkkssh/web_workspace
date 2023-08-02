@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>kakaoapiUISample.html</title>
+</head>
+<body>
+<p>
+<!-- form 태그 사용할 수 있다. 그러나 보내는 서버와 통신 방식이 비동기 통신이므로 form 태그 없이 한다.
+ -->
+	<label for = "query">검색어:</label>
+	<input id = "query" placeholder = "검색어를 입력하세요.">
+	<br>
+	<label for = "pageno">page no:</label>
+	<input id = "pageno" placeholder = "페이지번호">
+	<br>
+	<label for = "size">page size:</label>
+	<input id = "size" placeholder = "페이지크기(갯수)">
+	<br>
+	<label>정렬 방식:</label>
+	<input type = "radio" name = "sort" id = "accuracy" checked>
+	<label for = "accuracy">정확도순</label>
+	<input type = "radio" name = "sort" id = "recency">
+	<label for = "recency">최신순</label>
+	<button id = "search">검색</button>
+</p>
+<hr>
+<p>총 검색 건수: <span id = "count">0</span></p>
+<p id = "list"><!-- 조회 결과 내용을 목록으로 보여 준다. -->
+</p>
+<script type="text/javascript" src = "../js/kakaoapiUISample.js"></script>
+</body>
+</html>
