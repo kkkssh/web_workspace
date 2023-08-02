@@ -28,7 +28,7 @@
 	</table>
 	<button id = "todoAddBtn">스케쥴 추가</button>
 	<button id = "addBtn">스케쥴 추가(DOM)</button>
-	<button id = "timeBtn">시간순 정렬</button>
+	<!-- <button id = "sortBtn">시간순 정렬</button> -->
 <script type="text/javascript">
 		const time = ['9:00','11:00','12:30','14:00','16:45']
 		const todo = ['수업','과제','점심식사','주간회의','자료조사']
@@ -94,25 +94,33 @@
 			console.log(atodo)
 			
 			const tr1 = document.getElementById('time')	
-       	 	 console.log(tr1)
-        	 const newtd = document.createElement("td")	//요소 만들기
-        	 newtd.innerHTML= atime
-        	 tr1.appendChild(newtd)		//마지막 자식 요소로 추가하기
+       	 	console.log(tr1)
+        	const newtd = document.createElement("td")	//요소 만들기
+        	newtd.innerHTML= atime
+        	tr1.appendChild(newtd)		//마지막 자식 요소로 추가하기
 			
-        	 const tr2 = document.getElementById('todo')
-             console.log(tr2)
-             const newtd2 = document.createElement("td")
-             newtd2.innerHTML= atodo
-             tr2.appendChild(newtd2)
+        	const tr2 = document.getElementById('todo')
+            console.log(tr2)
+            const newtd2 = document.createElement("td")
+            newtd2.innerHTML= atodo
+            tr2.appendChild(newtd2)
              
 		})
 		
-		document.getElementById('timeBtn')
-		.addEventListener('click',()=>{
-			time.sort(function(a, b){
-				if(a.time )
-			}			
-		})
+		//정렬
+	/* document.getElementById('sortBtn').addEventListener('click',()=>{	
+		//배열의 sort 는 문자열 사전순 정렬. 정수값 정렬은 sort 안에 콜백함수 정의. return a-b; (예시)
+		//	console.log('9:00'-'11:00')		//NaN, return a.time-b.time 은 NaN 이다.
+			time.sort(function(a, b){	//a,b 는 객체	
+				//a,b 중에 작은 값이 무엇인지 정렬 알고리즘이 알 수 있도록 리턴 설정
+				if(a.time < b.time)		//a,b 객체의 time 프로퍼티 비교(시간순 정렬)
+					return -1
+				else return 1
+			})	
+						
+			tableMake()
+		}) */
+		
 </script>
 </body>
 </html>
