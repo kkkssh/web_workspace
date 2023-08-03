@@ -21,7 +21,7 @@
 		xhr.open('GET',
 		`https://dapi.kakao.com/v2/search/vclip?query=${query}&sort=${sort}&page=${page}&size=${size}`)
 		//요청 헤더 항목을 추가. 카카오 api에서 정함. 인증과 관련된 항목
-		xhr.setRequestHeader('Authorization','KakaoAK REST API키') //내애플리케이션 REST API키 복붙. KakaoAK 필수로 붙여야 한다.
+		xhr.setRequestHeader('Authorization','KakaoAK 3356a6da4a9952af9365d76b6a76ee10') //내애플리케이션 REST API키 복붙. KakaoAK 필수로 붙여야 한다.
 		//요청을 보내는 메소드
 		xhr.send()
 		let result = ''
