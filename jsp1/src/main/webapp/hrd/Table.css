@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* 회원등록, 회원정보수정 테이블 */
+table {	
+	border-collapse: collapse; 
+	margin: auto;
+	margin-top: 30px;
+}
+th {
+	border: 1px solid gray;
+	width: 300px;
+	padding: 20px 10px;
+	text-align: center
+}
+
+td {
+	border: 1px solid gray;
+	width: 500px;
+	padding: 20px 20px;
+	text-align: left;
+}
+
+#lblPhone{	
+	width: 270px;
+}
+
+#lblAddr{
+	width: 350px
+}
