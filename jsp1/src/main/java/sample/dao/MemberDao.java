@@ -25,15 +25,16 @@ public class MemberDao {
 	}
 	
 		
-	public int insert(MemberDto md) throws SQLException {
+	public int insert(MemberDto dto) throws SQLException {
 		Connection conn = OracleUtility.getConnection();
-		String sql = "insert into MEMBER_TBL_02 values (seq_custno.nextval, ?, ?, ?, sysdate, ?, ?)";
+		String sql = "insert into MEMBER_TBL_02 values (?, ?, ?, ?, sysdate, ?, ?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, md.getCustname());
-			ps.setString(2, md.getPhone());
-			ps.setString(3, md.getAddress());
-			ps.setString(4, md.getGrade());
-			ps.setString(5, md.getCity());
+			ps.setInt(1, dto.getCustno());
+			ps.setString(2, dto.getCustname());
+			ps.setString(3, dto.getPhone());
+			ps.setString(4, dto.getAddress());
+			ps.setString(5, dto.getGrade());
+			ps.setString(6, dto.getCity());
 			
 			int result = ps.executeUpdate();
 			ps.close();
@@ -95,6 +96,7 @@ public class MemberDao {
 		ps.setString(2, md.getPhone());
 		ps.setString(3, md.getAddress());
 		ps.setString(4, md.getCity());
+		ps.setInt(5, md.getCustno());
 		int result = ps.executeUpdate();
 		
 		ps.close();
