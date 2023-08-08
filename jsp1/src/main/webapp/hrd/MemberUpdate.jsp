@@ -29,8 +29,8 @@
 	
 	<nav>		
 		<ul>
-			<li><a href = "./MemberRegister.html">회원등록</a></li>
-			<li><a href = "./MemberList.html">회원목록조회/수정</a></li>
+			<li><a href = "./MemberRegister.jsp">회원등록</a></li>
+			<li><a href = "./MemberList.jsp">회원목록조회/수정</a></li>
 			<li><a href = "./MemberSales.html">회원매출조회</a></li>
 			<li><a href = "./Layout.html">홈으로</a></li>
 		</ul>
@@ -38,21 +38,27 @@
 	<section>
 		<h2>홈쇼핑 회원 정보 수정</h2>
 		<!-- action 은 input 데이터를 전달받고 처리할 url 이다. 
-			 MemberSave.jsp를 만들고 전달받은 파라미터로 update 실행하기.
+			 UpdateSave.jsp를 만들고 전달받은 파라미터로 update 실행하기.
 				ㄴ 이 파일에는 자바코드만 작성하고 태그는 필요 없다. 	
-			 MemberUpdate.jsp에서 보내는 파라미터 이름은 input 태그의 name 속성이다.
+			 UpdateSave.jsp에서 보내는 파라미터 이름은 input 태그의 name 속성이다.
 		-->
-		<form action="MemberSave.jsp" method = "post">
+		<form action="UpdateSave.jsp" method = "post">
+		<!-- 이후 자바코드 작성 할 때 가독성,편리성을 위해
+			 input name 이름은 DTO 클래스 변수명과 동일하게 하기
+			 UpdateSave.jsp 의 파라미터 저장 변수도 DTO와 동일하게 하기 -->
 			<table>
 				<tr>
 					<th><label for="lblNum">회원번호(자동발생)</label></th>
-					<!-- MemberList.jsp 에서 보낸 파라미터를 받아 custno 변수에 저장하고 value에서 출력하기 -->
-					<td><input type="text" id="lblNum" name="Num" value = "<%= custno %>"></td>
+					<!-- MemberList.jsp 에서 보낸 파라미터를 받아 custno 변수에 저장하고 value에서 출력하기 -->					
+					<td><input type="text" id="lblNum" name="Num" value = "<%= custno %>" 
+						disabled="disabled">
+						<input type = "hidden" name = "custno" value = "<%= custno %>">
+					</td>
 				</tr>
 				<tr>
 					<th><label for="lblName">회원성명</label></th>
-					<td><input type="text" id="lblName" name="name" value = "<%= dto.getCustname() %>"></td>
-					<!-- disabled로 설정된 것은 파라미터 전달이 안된다. readonly로 바꾸기 -->
+					<td><input type="text" id="lblName" name="custname" value = "<%= dto.getCustname() %>"></td>
+						
 				</tr>
 				<tr>
 					<th><label for="lblPhone">회원전화</label></th>
@@ -64,16 +70,16 @@
 				</tr>
 				<tr>
 					<th><label for="lblDate">가입일자</label></th>
-					<td><input type="text" id="lblDate" name="join-date" value = "<%= dto.getJoindate() %>">
+					<td><input type="text" id="lblDate" name="joindate" value = "<%= dto.getJoindate() %>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="lblLevel">고객등급[A:VIP,B:일반,C:직원]</label></th>
-					<td><input type="text" id="lblLevel" name="level" value = "<%= dto.getGrade() %>"></td>
+					<td><input type="text" id="lblLevel" name="grade" value = "<%= dto.getGrade() %>"></td>
 				</tr>
 				<tr>
 					<th><label for="lblCity">도시코드</label></th>
-					<td><input type="text" id="lblCity" name="citycode" value = "<%= dto.getCity() %>"></td>
+					<td><input type="text" id="lblCity" name="city" value = "<%= dto.getCity() %>"></td>
 				</tr>
 				<tr>
 					<th colspan="2">

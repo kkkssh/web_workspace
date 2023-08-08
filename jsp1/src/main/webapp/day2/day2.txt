@@ -1,0 +1,46 @@
+<<복습>>
+1. jsp 는 html 에 ( 자바 코드 )를 포함한다.
+2. jsp 는 웹서버가 요청 받은 것을 ( was )에게 처리를 위하여 요청을 전달한다.
+3. jsp 는 요청 처리를 위해 .java 로 변환이 되는데 이것을 ( 서블릿 )이라고 한다.
+4. 3번의 ( 서블릿 )을 처리하는 기능이 ( 웹컨테이너 )이다.
+* 톰캣은 웹서버 + WAS
+* html, css, js 에 대한 리소스(자원) 요청은 웹컨테이너가 처리하지 않는다.
+5. jsp에는 내장객체가 있다. day1에서 사용한 것은 ( out ), ( request )
+6. request 객체는 사용자가 요청한 정보를 갖고 있다. 그 중에서 
+   파라미터는 사용자가 보낸 요청 데이터이다. getParameter 메소드
+
+<<요청 파라미터 보내기 방법 2>>
++ form 태그 사용
+	ㄴ 입력 태그 (input, select) 의 name 속성값이 파라미터 이름
+								value 속성값이 파라미터 값
+	ㄴ a 태그 href 는 요청 method 가 항상 get. href 는 서버의 주소
+				get 방식은 자동으로 문자인코딩을 UTF-8 로 한다.
+	ㄴ form 태그는 method 방식을 'get' , 'post'로 지정한다.
+				post 방식은 문자인코딩을 직접 설정해야 한다.
+				action 속성값으로 서버의 주소를 정한다.
+	ㄴ input 의 disabled 가 true 이면 파라미터 전송이 안된다.
+			   readonly 가 true 일 때 파라미터 전송 가능. 편집만 불가
+	ㄴ input type = hidden(숨김) 일 때는 화면 표시는 안되고 파라미터 전송은 가능.
+	
+회원정보 수정과 같은 방법으로 아래 소스파일 완성하기
+MemberRegister.jsp
+RegisterSave.jsp
+
+<<jsp 액션태그>>
+1. jsp:include
+	ㄴ 외부 jsp 파일을 포함시킨다. 컴파일된 .class 를 포함한다
+	ㄴ 여러 jsp 파일에서 공통적으로 사용되는 코드 부분을 반복해서 코드를 작성하지 않고
+	  파일을 생성해서 include 한다.
+2. jsp:param
+	ㄴ jsp:include 에서 포함시키는 jsp에 파라미터를 전달하기
+
+jsp 안에서 내장객체를 이용하여 작성하는 자바코드 대신에 사용하는 태그
+jsp:useBean 태그를 조사해서 RegisterSave.jsp 에서 사용해보기(getParameter 대신에 사용한다.)	
+	ㄴ jsp:setProperty : 값 저장
+	ㄴ jsp:getProperty : 출력
+	
+	
+	
+	
+	
+	

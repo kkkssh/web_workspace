@@ -23,8 +23,8 @@
 
 	<nav>
 		<ul>
-			<li><a href="./MemberRegister.html">회원등록</a></li>
-			<li><a href="./MemberList.html">회원목록조회/수정</a></li>
+			<li><a href="./MemberRegister.jsp">회원등록</a></li>
+			<li><a href="./MemberList.jsp">회원목록조회/수정</a></li>
 			<li><a href="./MemberSales.html">회원매출조회</a></li>
 			<li><a href="./Layout.html">홈으로</a></li>
 		</ul>
