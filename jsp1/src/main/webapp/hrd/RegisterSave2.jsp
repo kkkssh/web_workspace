@@ -10,7 +10,7 @@ request.setCharacterEncoding("UTF-8");
 <jsp:useBean id="dto" class="sample.dto.MemberDto"/>
 
 <jsp:setProperty property="*" name="dto"/>	<!-- 모든 것 가져오기 -->
-<hr>
+
 <jsp:setProperty property="custno" name="dto"/>
 <jsp:setProperty property="custname" name="dto"/>
 <jsp:setProperty property="phone" name="dto"/>
