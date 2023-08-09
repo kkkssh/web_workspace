@@ -9,7 +9,7 @@ request.setCharacterEncoding("UTF-8");
 
 <jsp:useBean id="dto" class="sample.dto.MemberDto"/>
 
-<jsp:setProperty property="*" name="dto"/>
+<jsp:setProperty property="*" name="dto"/>	<!-- 모든 것 가져오기 -->
 <hr>
 <jsp:setProperty property="custno" name="dto"/>
 <jsp:setProperty property="custname" name="dto"/>
@@ -22,7 +22,10 @@ request.setCharacterEncoding("UTF-8");
 	MemberDao dao = MemberDao.getMemberDao();
 	dao.insert(dto);
 %>
-
+<script type="text/javascript">
+	alert('회원 등록이 완료되었습니다.')
+	location.href = 'MemberList.jsp'
+</script>
 
 
 
