@@ -42,6 +42,8 @@ RegisterSave.jsp
 			ㄴ 속성 종류 property : 자바빈을 만든 클래스의 필드(변수)이름
 					  name : 자바빈 id를 설정
 					  param : input 태그의 name 
+					  property="*" 로 하면 모든 파라미터를 가져올 수 있다.
+					  (단, input 태그 name 속성, dto 클래스의 필드명을 동일하게 한다.)
 	ㄴ jsp:getProperty : 출력
 	ㄴ 기본생성자, setter, getter 있어야 한다.
 ((연습))RegisterSave.jsp 에서 사용해보기.(getParameter 대신에 사용한다.)	
