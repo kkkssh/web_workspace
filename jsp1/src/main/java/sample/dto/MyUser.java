@@ -23,8 +23,9 @@ public class MyUser {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	@Override
+	public String toString() {
+		return "MyUser [uname=" + uname + ", age=" + age + ", address=" + address + "]";
+	}
 	
-	
-	
-
 }
