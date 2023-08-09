@@ -9,8 +9,12 @@ request.setCharacterEncoding("UTF-8");
 
 <jsp:useBean id="dto" class="sample.dto.MemberDto"/>
 
+<!-- 전체 지정 -->
 <jsp:setProperty property="*" name="dto"/>	<!-- 모든 것 가져오기 -->
 
+<!-- 위와 아래 중 둘 중 하나만 있어도 된다. -->
+
+<!-- 각자 지정 -->
 <jsp:setProperty property="custno" name="dto"/>
 <jsp:setProperty property="custname" name="dto"/>
 <jsp:setProperty property="phone" name="dto"/>
