@@ -33,7 +33,7 @@ public class JCustomerDao {		//구매와 관련된 CRUD 실행 SQL. DAO : JCusto
 					rs.getString(2), 
 					rs.getString(3), 
 					rs.getInt(4), 
-					rs.getDate(5));
+					rs.getDate(5),null);
 		}
 		ps.close();
 		conn.close();
@@ -41,5 +41,27 @@ public class JCustomerDao {		//구매와 관련된 CRUD 실행 SQL. DAO : JCusto
 		return temp;
 	}
 	
-	
+	public JCustomer login(String id,String password) {
+		System.out.println(id);System.out.println(password);
+	      Connection conn = OracleUtility.getConnection();
+	      // id는 custom_id 컬럼값, password는 password 컬럼값(평문으로 저장됨)
+	      String sql = "select custom_id ,name from j_custom where custom_id =? and password=?";
+	      JCustomer result = null;
+	      try(PreparedStatement ps = conn.prepareStatement(sql)){
+	      ps.setString(1, id);
+	      ps.setString(2,password);	      
+	      ResultSet rs = ps.executeQuery();
+	      if(rs.next()) {
+	    	  result = JCustomer.builder()
+	                  .custom_id(rs.getString(1))
+	                  .name(rs.getString(2))
+	                  .build();			
+	      }
+	      conn.close();
+	      }catch(SQLException e) {
+	    	  e.printStackTrace();
+	      }	     
+	      System.out.println(result);
+	      return result;      //result 가 null 이 아니면 로그인 성공
+	   }
 }
