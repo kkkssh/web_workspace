@@ -60,8 +60,7 @@ public class JCustomerDao {		//구매와 관련된 CRUD 실행 SQL. DAO : JCusto
 	      conn.close();
 	      }catch(SQLException e) {
 	    	  e.printStackTrace();
-	      }	     
-	      System.out.println(result);
+	      }		     
 	      return result;      //result 가 null 이 아니면 로그인 성공
 	   }
 }
