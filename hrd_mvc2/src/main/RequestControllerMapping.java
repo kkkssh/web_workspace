@@ -10,6 +10,7 @@ import controller.LoginViewController;
 import controller.LogoutController;
 import controller.RegActionController;
 import controller.RegisterController;
+import controller.SaleController;
 import controller.UpdateActionController;
 import controller.UpdateController;
 
@@ -19,7 +20,7 @@ public class RequestControllerMapping {
 	public static void init() {
 		//설계된 url,method 에 따라 처리할 controller 구현체를 Key,Value 로 HashMap에 저장합니다.
 		mapping.put(new RequestMap("/list.hrd", "GET"), new ListController());
-//		mapping.put(new RequestMap("/sale.hrd", "GET"), new SaleController());
+		mapping.put(new RequestMap("/sale.hrd", "GET"), new SaleController());
 		mapping.put(new RequestMap("/update.hrd", "GET"), new UpdateController());
 		mapping.put(new RequestMap("/register.hrd", "GET"), new RegisterController());
 		mapping.put(new RequestMap("/register.hrd", "POST"), new RegActionController());
