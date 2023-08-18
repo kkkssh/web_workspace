@@ -40,8 +40,9 @@ public class Paging {
 		
 		//아래 예시값을 대입해 보세요.
 		startPage = (this.currentPage-1)/10*10+1;		 //페이지번호 리스트 10개씩 
-		//현재 페이지가 57 (51~60) , startPage =51
+		//현재 페이지가 57 (51~60) , startPage =51	endPage=60
 		//현재 페이지가 7 (1~10) , startPage =1
+		//현재 페이지가 29 (21~30) , startPage =21	endPage=30
 		//현재 페이지가 156(151~160) , startPage =151
 		//현재 페이지가 160(151~160)  , startPage =151
 		endPage = startPage+9;
