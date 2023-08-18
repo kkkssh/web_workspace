@@ -11,6 +11,8 @@
       <li>요청 URL : <%= request.getRequestURL() %></li>
       <li>요청 URL : <%= request.getRequestURI() %></li>
       <li>컨텍스트(context) : <%= request.getContextPath() %></li>
+      <!-- el로 할 때 ${pageContext.request.contextPath} :
+      		애플리케이션 이름을 기준으로 절대 주소 표시할 때 -->
       <li>클라이언트 ip : <%= request.getRemoteAddr() %></li>
       <li>클라이언트 host : <%= request.getRemoteHost() %></li>
       <li>클라이언트 포트 : <%= request.getRemotePort() %></li>
