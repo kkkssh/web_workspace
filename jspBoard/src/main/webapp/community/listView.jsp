@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>우리 북카페</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/list.css?v=3">  
+	<!-- ${pageContext.request.contextPath } 는 /jspBoard : 프로젝트 이름, 웹서비스 이름-->
 </head>
 <body>
 <main id="list">
@@ -95,6 +96,7 @@
 	<!--(3) 페이지 범위 startPage 부터 endPage 까지 반복 -->
 	<c:forEach var="i" begin="${paging.startPage }" end="${paging.endPage }">
 		<a class="pagenum ieach" href="?page=${i }"><c:out value="${i }"/></a>
+		<!-- 클래스 이름 ieach는 자바스크립트에서 숫자 a 태그 요소만 가져가기 위해 붙인 이름 -->
 	</c:forEach>
 	
 	<!--(4)  실행하면서 파악해보세요. -->
@@ -106,10 +108,10 @@
 </main>
 <script type="text/javascript">
 	const pnums = document.querySelectorAll('.ieach');
-	pnums.forEach(function(item){
+	pnums.forEach(function(item){	/* forEach로 숫자 a태그를 하나씩 item 에 저장 */
 		console.log(item);
 		/* item 번호가 현재 페이지 이면 글꼴 스타일을 다르게함. */
-		if(item.innerHTML=='${paging.currentPage}') {    
+		if(item.innerHTML=='${paging.currentPage}') {   /* a태그의 숫자와 현재페이지가 같은지 검사 */ 
 			item.style.color = 'black';
 			item.style.fontWeight = 'bold';
 		}else{
