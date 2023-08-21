@@ -27,7 +27,7 @@
 	//(1)
 	request.setAttribute("vo", vo);
 	//(2)
-	request.setAttribute("page", pageNo);
+	request.setAttribute("page", pageNo);	
 	pageContext.forward("updateView.jsp"); //화면에 애트리뷰트와 함께 요청 전달.
 	%>
 </body>
