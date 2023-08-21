@@ -67,6 +67,9 @@
 		<!-- 글쓰기 할때 로그인을 하도록 한다면 자바스크립트 함수로 로그인 여부 확인합니다. -->
 		<a href="javascript:write()" class="button">글쓰기</a>
 		<a href="${pageContext.request.contextPath}" class="button" >홈</a>
+		<!-- contextPath 로 url 요청하면 웰컴리스트에 해당하는 index.jsp로 알아서 요청/화면출력
+				 ㄴ web.xml
+		 -->
 	</div>
 </div>
 <script type="text/javascript">
