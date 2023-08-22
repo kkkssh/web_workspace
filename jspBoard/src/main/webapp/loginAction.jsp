@@ -18,7 +18,7 @@
 		String back = (String) session.getAttribute("back");
 		if (vo != null) {
 	//로그인 성공
-	session.setAttribute("user", vo); //핵심.
+	session.setAttribute("user", vo); //핵심
 	if (back != null) {
 		url = back;
 		session.removeAttribute("back"); //back 이름의 애트리뷰트 삭제
