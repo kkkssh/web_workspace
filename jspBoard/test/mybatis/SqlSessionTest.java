@@ -22,6 +22,7 @@ class SqlSessionTest {
 									   .title("test")
 									   .writer("sana")
 									   .content("테스트")
+									   .ip("ip")
 									   .build());
 		
 		System.out.println("idx = " +idx);
