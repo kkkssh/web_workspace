@@ -1,7 +1,7 @@
 -- 댓글테이블
 CREATE TABLE communityComments (
 	idx number(10) NOT NULL,   	-- 기본키
-	mref number(10) NOT NULL,   -- community 테이블의 idx	
+	mref number(10) NOT NULL,   -- community 테이블의 idx	(외래키)
 	writer varchar2(50) NOT NULL,	-- 작성자
 	content varchar2(1000) NOT NULL,  -- 댓글 내용
 	createdAt DATE default sysdate ,  -- 작성날짜와시간 기본값
@@ -11,7 +11,7 @@ CREATE TABLE communityComments (
 );
 CREATE SEQUENCE comment_idx_seq;
 
--- 댓글 테이블 데이터
+-- 댓글 테이블 데이터(mref 컬럼값은 community 최근글의 idx로 수정해야 확인이 편하다.)
 INSERT INTO communityComments (idx,mref,writer,content)
 VALUES (comment_idx_seq.nextval,3,'이하니','이글은 메인글 3번 댓글~');
 INSERT INTO communityComments (idx,mref,writer,content)
