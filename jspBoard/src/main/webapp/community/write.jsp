@@ -17,7 +17,7 @@
 			<hr style="color:white;">
 <form name="frm1" method="post" action="writeAction.jsp" onsubmit="return isValid()">  					
 	<input type="hidden" name="page" value="${page}">   
- <table>
+ <table> 
  	<tr><th>제목</th>
  		<td>
  			<input type="text" name="title" size="50" >	
